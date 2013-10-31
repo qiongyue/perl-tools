@@ -21,7 +21,7 @@ my @client =  split(':', $s[3]);
 
 #send data to server
 my $ua = LWP::UserAgent->new();  
-my $req = POST 'http://aq.betteredu.net/Stat/server', [ 
+my $req = POST 'http://aq.test.com/Stat/server', [ 
     login_at => $time,
     login_username => $username,
     server_ip => $ip,
