@@ -29,7 +29,7 @@ $agent->timeout(30);
 my @downServer = ();
 #qw(http://sdfs.linuxlong.com http://www.betteredu.net http://oa.betteredu.net http://star.icntv.net http://www.beauty128.com http://www.beauty626.com)
 
-foreach my $url (qw(http://www.betteredu.net http://oa.betteredu.net http://star.icntv.net http://www.beauty128.com http://www.beauty626.com http://www.iavcusa.com http://www.icntv.net)) {
+foreach my $url (qw(http://www.betteredu.net)) {
     my $request = GET($url); 
     $request->header('User-Agent'=>'Mozilla/5.0 (Windows NT 5.1; rv:10.0.1) Gecko/20100101 Firefox/23.0.1');  
     $request->header('Accept-Encoding'=>'gzip, deflate');  
@@ -55,7 +55,7 @@ if (-e $logFilename) {
 } 
 
 if ($mailBody ne "" && $mailBody ne $lastCheckResult) {
-    send_email("wangqiongyue\@qq.com", "服务器检测到异常，请检查", $mailBody);
+    send_email("test\@qq.com", "服务器检测到异常，请检查", $mailBody);
 
     print "send email \n";
 
@@ -86,7 +86,7 @@ sub send_email {
     my $emailEncode = Email::Simple->create(
         header => [
             To      => $email,
-            From    => '瓊粵小助手 <1808391589@qq.com>',
+            From    => '瓊粵小助手 <test@qq.com>',
             Subject => $subject,
         ],
         body => $body,
