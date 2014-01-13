@@ -27,7 +27,7 @@ my $agent = new LWP::UserAgent;
 $agent->timeout(30); 
 
 my @downServer = ();
-#qw(http://sdfs.linuxlong.com http://www.betteredu.net http://oa.betteredu.net http://star.icntv.net http://www.beauty128.com http://www.beauty626.com)
+
 
 foreach my $url (qw(http://www.betteredu.net)) {
     my $request = GET($url); 
